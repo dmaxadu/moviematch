@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tinder-like {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F0F2F4;
+}
+
+.page-title {
+  position: absolute;
+  top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(124,124,124,1) 46%, rgba(0,0,0,1) 100%);
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+.page-title:hover {
+  transform: scale(1.1);
+}
+
+.movie-card {
+  position: absolute;
+  width: 500px;
+  height: 800px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  -webkit-box-shadow: 15px 14px 28px 0px rgba(173,173,173,1);
+  -moz-box-shadow: 15px 14px 28px 0px rgba(173,173,173,1);
+  box-shadow: 15px 14px 28px 0px rgba(173,173,173,1);
+  border-radius: 20px;
+}
+
+.card-wrapper {
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.movie-title {
+  z-index: 1;
+  bottom: 40px; /* Acima dos botões */
+  left: 10px;
+  color: white;
+  font-size: 40px;
+  text-shadow: 4px 4px 2px rgba(0,0,0,1);
+  font-family: "Poppins", sans-serif;
+  cursor: default;
+}
+
+.movie-poster {
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.movie-infos {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px 30px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 30px; /* Espaçamento entre os botões */
+  bottom: 20px; /* Distância da parte inferior */
+  z-index: 1;
+}
+
+.like-button,
+.jump-button,
+.dislike-button {
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  display: flex;
+  text-shadow: 10px 4px 2px rgba(0,0,0,1);
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease all;
+}
+
+.like-button:hover,
+.jump-button:hover,
+.dislike-button:hover {
+  transform: scale(1.1);
+}
+
+.like-button:hover ~ .page-title {
+  transform: scale(1.1);
+}
+
+.like-button {
+  background: rgb(111,231,194);
+  background: linear-gradient(90deg, rgba(111,231,194,0.6) 0%, rgba(124,249,210,0.6) 46%, rgba(0,255,176,0.6) 100%);
+  color: white;
+}
+
+.jump-button {
+  background: rgb(231,173,111);
+  background: linear-gradient(90deg, rgba(231,173,111,1) 0%, rgba(249,218,124,0.7231267507002801) 46%, rgba(245,255,0,0.8323704481792717) 100%);
+  color: white;
+}
+
+.dislike-button {
+  background: rgb(231,111,111);
+  background: linear-gradient(90deg, rgba(231,111,111,1) 0%, rgba(249,172,124,1) 46%, rgba(255,68,0,0.4066001400560224) 100%);
+  color: white;
+}
+
+.recommendations {
+  background: rgb(233,233,233);
+  background: linear-gradient(90deg, rgba(233,233,233,1) 0%, rgba(168,168,168,1) 46%, rgba(236,236,236,1) 100%);
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 45%;
+  border-radius: 20px;
+}
+
+.recommendations-title {
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  width: 90%;
+}
+
+.movie-recommendation-wrapper {
+  width: 100%;
+  padding: 10px;
+}
+
+.movie-recommendation {
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%; /* Mantém a proporção 2:3 */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.movie-recommendation-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
