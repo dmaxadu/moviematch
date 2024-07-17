@@ -193,6 +193,11 @@
   padding-bottom: 150%; /* Mantém a proporção 2:3 */
   overflow: hidden;
   border-radius: 10px;
+  transition: 0.3s ease all;
+}
+
+.movie-recommendation-poster:hover{
+  transform: scale(1.05);
 }
 
 .movie-recommendation-poster {
